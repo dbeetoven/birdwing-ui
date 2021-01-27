@@ -1,10 +1,43 @@
-const path = require('path');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
+const path = require('path')
+const HtmlWebPackPlugin = require('html-webpack-plugin')
+const CompressionPlugin = require('compression-webpack-plugin')
 
-module.exports = {
+// Plugins
+
+const devPlugins = []
+const prodPlugins = [
+  new CompressionPlugin({
+    test: /\.js(\?.*)?$/i,
+  }),
+]
+
+const jsRules = {
+  test: /\.js$/,
+  exclude: /node_modules/,
+  use: {
+    loader: 'babel-loader',
+    options: {
+      presets: ['@babel/preset-react', '@babel/preset-env'],
+      plugins: ['@babel/plugin-proposal-optional-chaining'],
+    },
+  },
+}
+const cssRules = {
+  test: /\.css$/,
+  use: [
+    {
+      loader: 'style-loader',
+    },
+    {
+      loader: 'css-loader',
+    },
+  ],
+}
+
+module.exports = (env, { mode }) => ({
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js',
+    filename: '[name].[chunkhash].bundle.js',
   },
   resolve: {
     modules: [path.join(__dirname, 'src'), 'node_modules'],
@@ -13,30 +46,21 @@ module.exports = {
     },
   },
   module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
-      },
-      {
-        test: /\.css$/,
-        use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
-          },
-        ],
-      },
-    ],
+    rules: [jsRules, cssRules],
+  },
+  optimization: {
+    splitChunks: { chunks: "all" }
   },
   plugins: [
+    ...(mode === 'production' ? prodPlugins : devPlugins),
     new HtmlWebPackPlugin({
-      template: './src/index.html',
+      template: 'src/index.html',
     }),
-  ],
-};
+  ].filter(Boolean),
+  performance: {
+    hints: 'warning',
+    assetFilter: function (assetFilename) {
+      return assetFilename.endsWith('.js.gz')
+    },
+  },
+})
