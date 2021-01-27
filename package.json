@@ -1,0 +1,31 @@
+{
+  "name": "birdwing-ui",
+  "version": "1.0.0",
+  "description": "Birdwing Boutique",
+  "main": "index.js",
+  "author": "Beetoven Desir <beetovenson@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "serve": "webpack serve --watch",
+    "start": "webpack-dev-server  --config ./webpack.config.js --mode development --open --hot",
+    "build": "webpack --mode production"
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.0.1",
+    "html-webpack-plugin": "^4.5.1",
+    "husky": "^4.3.8",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.18.0",
+    "webpack-cli": "^4.4.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
