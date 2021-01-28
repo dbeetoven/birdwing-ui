@@ -6,8 +6,10 @@
     },
     "extends": [
         "eslint:recommended",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        "prettier"
     ],
+    "parser": "babel-eslint",
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
@@ -20,7 +22,7 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react","prettier", "react-hooks"
     ],
     "rules": {
         "indent": [
