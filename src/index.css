@@ -26,7 +26,12 @@
   body {
     scroll-behavior: smooth;
     font-family: var(--font-family);
-    background-color: var(--white-1);
+    background-color: var(--white);
     color: var(--navy);
     line-height: 1.6;
+  }
+  .transition-colors {
+    transition-property: background-color,border-color,color,fill,stroke;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: 150ms;
   }

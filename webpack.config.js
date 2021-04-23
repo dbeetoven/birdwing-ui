@@ -14,13 +14,17 @@ const prodPlugins = [
 const jsRules = {
     test: /\.js$/,
     exclude: /node_modules/,
-    use: {
+    use: [{
         loader: 'babel-loader',
         options: {
             presets: ['@babel/preset-react', '@babel/preset-env'],
             plugins: ['@babel/plugin-proposal-optional-chaining'],
         },
     },
+    {
+        loader:'eslint-loader'
+    }
+]
 }
 const cssRules = {
     test: /\.css$/,
