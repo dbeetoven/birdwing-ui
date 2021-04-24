@@ -1,11 +1,12 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import './index.css';
-import App from './pages/App';
+import * as React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
+import App from './pages/App'
+import 'bulma/css/bulma.min.css'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root'),
-);
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>,
+    document.getElementById('root')
+)

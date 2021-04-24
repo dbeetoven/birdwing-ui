@@ -14,13 +14,17 @@ const prodPlugins = [
 const jsRules = {
     test: /\.js$/,
     exclude: /node_modules/,
-    use: {
+    use: [{
         loader: 'babel-loader',
         options: {
             presets: ['@babel/preset-react', '@babel/preset-env'],
             plugins: ['@babel/plugin-proposal-optional-chaining'],
         },
     },
+    {
+        loader:'eslint-loader'
+    }
+    ]
 }
 const cssRules = {
     test: /\.css$/,
@@ -32,6 +36,18 @@ const cssRules = {
             loader: 'css-loader',
         },
     ],
+}
+const fileRules={
+    test: /\.(jpe?g|png|jpg|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
+    use: [
+        {
+            loader: 'url-loader',
+            options: {
+                limit: 100000
+            }
+        }
+    ]
+
 }
 
 module.exports = (env, { mode }) => ({
@@ -46,7 +62,7 @@ module.exports = (env, { mode }) => ({
         },
     },
     module: {
-        rules: [jsRules, cssRules],
+        rules: [jsRules, cssRules,fileRules],
     },
     optimization: {
         splitChunks: { chunks: 'all' },
