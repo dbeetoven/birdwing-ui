@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
+const ESLintPlugin = require('eslint-webpack-plugin')
 
 // Plugins
 
@@ -21,10 +22,7 @@ const jsRules = {
             plugins: ['@babel/plugin-proposal-optional-chaining'],
         },
     },
-    {
-        loader:'eslint-loader'
-    }
-    ]
+    ],
 }
 const cssRules = {
     test: /\.css$/,
@@ -37,16 +35,16 @@ const cssRules = {
         },
     ],
 }
-const fileRules={
+const fileRules = {
     test: /\.(jpe?g|png|jpg|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
     use: [
         {
             loader: 'url-loader',
             options: {
-                limit: 100000
-            }
-        }
-    ]
+                limit: 100000,
+            },
+        },
+    ],
 
 }
 
@@ -62,20 +60,21 @@ module.exports = (env, { mode }) => ({
         },
     },
     module: {
-        rules: [jsRules, cssRules,fileRules],
+        rules: [jsRules, cssRules, fileRules],
     },
     optimization: {
         splitChunks: { chunks: 'all' },
     },
     plugins: [
         ...(mode === 'production' ? prodPlugins : devPlugins),
+        new ESLintPlugin({ emitError: true }),
         new HtmlWebPackPlugin({
             template: 'src/index.html',
         }),
     ].filter(Boolean),
     performance: {
         hints: 'warning',
-        assetFilter: function (assetFilename) {
+        assetFilter: function(assetFilename) {
             return assetFilename.endsWith('.js.gz')
         },
     },
