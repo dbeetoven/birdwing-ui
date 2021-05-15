@@ -1,23 +1,22 @@
 import React from 'react'
+import './index.css'
 import BirdwingLogo from '../../assets/images/logo.png'
 
-export default function Navbar({user=null}){
+export default function Navbar() {
     // if (user===null){
     //     user.nomber='Test'
     // }
     return (
-        <nav className="navbar" role="navigation" aria-label="main navigation">
-            <div className="navbar-brand">
-                <a className="navbar-item" href="https://bulma.io">
-                    <img src={BirdwingLogo} alt="Birdwing Logo" width="112" height="28"/>
+        <>
+            <nav className="navbar">
+                <a href="https://freecodecamp.org" className="logo">
+                    <img src={BirdwingLogo} alt='logo' />
                 </a>
-
-                <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false">
-                    <span aria-hidden="true">Home</span>
-                    <span aria-hidden="true">Contact</span>
-                    <span aria-hidden="true">Shopping</span>
-                </a>
-            </div>
-        </nav>
+                <ul className="nav-links">
+                    <li className="nav-item"><a href="#">Contact</a></li>
+                    <li className="nav-item"><a href="#">Shopping Cart</a></li>
+                </ul>
+            </nav>
+        </>
     )
 }
