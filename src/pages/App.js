@@ -1,19 +1,16 @@
 import * as React from 'react'
-import { Route, Switch } from 'react-router-dom'
-import Navbar from '../components/Navbar'
-import Home from './home/home'
+import { BrowserRouter as Router } from 'react-router-dom'
+import { Layout } from '../components/Layout/Layout'
+import { Routes } from '../config/router/routes'
+
 
 export default function App() {
     return (
-        <>
-            <main>
-                <Navbar />
-                <Switch>
-                    <Route path='/' component={Home} />
-                </Switch>
-            </main>
-
-        </>
+        <Router>
+            <Layout>
+                <Routes/>
+            </Layout>
+        </Router>
 
     )
 }
