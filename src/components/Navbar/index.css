@@ -1,13 +1,13 @@
-.navbar {
-    width: 100%;
-    padding-left: 30px;
-    padding-right: 10px;
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 0 2px 0 grey;
-    color: var(--theme-color);
-}
+/*.navbar {*/
+/*    width: 100%;*/
+/*    padding-left: 30px;*/
+/*    padding-right: 10px;*/
+/*    display:flex;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*    box-shadow: 0 0 2px 0 grey;*/
+/*    color: var(--theme-color);*/
+/*}*/
 
 .logo {
     display: inline-block;
@@ -33,11 +33,7 @@
     border-bottom: 2px var(--theme-text-color) solid;
 }
 
-.logo img {
-    height: 26px;
-    width: 175px;
-    vertical-align: middle;
-}
+
 
 @media (max-width: 700px) {
 }
