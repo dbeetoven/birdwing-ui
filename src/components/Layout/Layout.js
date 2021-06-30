@@ -4,6 +4,7 @@ import { Container } from './LayoutStyles'
 import Theme from '../../styles/theme'
 import Navbar from '../Navbar/Navbar'
 
+// eslint-disable-next-line react/prop-types
 export const Layout = ({children}) => {
     return (
         <Theme>
@@ -15,6 +16,6 @@ export const Layout = ({children}) => {
     )
 }
 
-// Layout.prototype={
-//     children: PropTypes.any
-// }
+Layout.prototype={
+    children: PropTypes.element.isRequired
+}

@@ -5,6 +5,7 @@ import React from 'react'
 import theme from '../themes/default'
 import GlobalStyles from './globalStyles'
 
+// eslint-disable-next-line react/prop-types
 const Theme = ({ children }) => (
     <ThemeProvider theme={theme}>
         <GlobalStyles />
