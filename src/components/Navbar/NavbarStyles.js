@@ -10,6 +10,7 @@ export const WrapperNav =styled.nav`
   grid-column-gap: 2rem;
   padding: 1rem;
   padding-top: 2rem;
+  background-color: #edb026;
   
   @media ${(props) => props.theme.breakpoints.sm} {
     display: grid;

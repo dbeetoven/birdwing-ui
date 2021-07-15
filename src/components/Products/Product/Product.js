@@ -1,21 +1,22 @@
 import React from 'react'
-import { Card } from './ProductStyles'
+import { Button, Card, CardContent, CardDescription, CardDescriptionDetail, CardDescriptionPrice, CardDescriptionTitle, CardImg,CardFoooter } from './ProductStyles'
+
 
 export default function Product() {
     return (
 
         <Card>
-            <div>
-                <h4> Product Title</h4>
-                <h5>Product subtitle</h5>
-                <p> Price $</p>
-            </div>
-            <div>
-                <p> Product description</p>
-                <p> Product description</p>
-                <p> Product description</p>
-                <p> Product description</p>
-            </div>
+            <CardContent>
+                <CardImg src="https://images.unsplash.com/profile-1446404465118-3a53b909cc82?" />
+                <CardDescription>
+                    <CardDescriptionTitle>Big Pons Simple + Papas Fritas</CardDescriptionTitle>
+                    <CardDescriptionDetail>Medallon 160gr Cheddar Fetas x2 Bacon Cebolla Crispy Aderezo Big Pons</CardDescriptionDetail>
+                    <CardDescriptionPrice>$ 850</CardDescriptionPrice>
+                </CardDescription>
+            </CardContent>
+            <CardFoooter>
+                <Button>Agregar</Button>
+            </CardFoooter>
         </Card>
     )
 }
