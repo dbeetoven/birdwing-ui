@@ -47,6 +47,7 @@ export const NavItemLink = styled(Link)`
 `
 
 export  const NavListItem=styled.li`
+margin: 5px;
   &:hover {
     background-color: white;
   }

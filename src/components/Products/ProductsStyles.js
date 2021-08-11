@@ -8,7 +8,7 @@ export const Wrapper = styled.section`
 export const WrapperContent = styled.div`
   display: grid;
   grid-auto-flow: dense;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 30rem), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 47rem), 1fr));
   grid-template-rows: 1fr;
   gap: 1rem;
   padding: 5rem;

@@ -48,15 +48,26 @@ const fileRules = {
 
 }
 
+
 module.exports = (env, { mode }) => ({
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: '[name].[chunkhash].bundle.js',
     },
     resolve: {
-        modules: [path.join(__dirname, 'src'), 'node_modules'],
+        modules: [path.join(__dirname, './src'), 'node_modules'],
+        extensions: ['.js', '.jsx', '.json'],
         alias: {
-            react: path.join(__dirname, 'node_modules', 'react'),
+            assets: path.resolve(__dirname, './src/assets/'),
+            config: path.resolve(__dirname, './src/config/'),
+            pages: path.resolve(__dirname, './src/pages/'),
+            services: path.resolve(__dirname, './src/services/'),
+            hooks: path.resolve(__dirname, './src/hooks/'),
+            styles: path.resolve(__dirname, './src/styles/'),
+            themes: path.resolve(__dirname, './src/themes/'),
+            utils: path.resolve(__dirname, './src/utils/'),
+            contexts: path.resolve(__dirname, './src/contexts/'),
+            components: path.resolve(__dirname, 'src/components/')
         },
     },
     module: {
