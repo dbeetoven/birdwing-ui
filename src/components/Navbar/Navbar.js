@@ -18,7 +18,7 @@ export default function Navbar() {
             </NavList>
             <NavList>
                 <NavListItem className="nav-item"><NavItemLink to={`${ROUTES['home'].path}`}><FiShoppingCart/></NavItemLink></NavListItem>
-                <NavListItem className="nav-item"><NavItemLink to={`${ROUTES['home'].path}`}>Contact</NavItemLink></NavListItem>
+                <NavListItem className="nav-item"><NavItemLink to={`${ROUTES['login'].path}`}>Login</NavItemLink></NavListItem>
             </NavList>
         </WrapperNav>
     )

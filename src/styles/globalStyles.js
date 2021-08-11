@@ -43,9 +43,7 @@ const GlobalStyles = createGlobalStyle`
   p {
     -webkit-line-clamp: 5;
   }
-  html, body, #root {
-    height: 100%;
-  }
+
   ul {
     list-style: none;
   }
