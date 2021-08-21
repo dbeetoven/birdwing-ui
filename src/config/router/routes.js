@@ -1,7 +1,7 @@
 import React from 'react'
 import { Switch, Route } from 'wouter'
-import Login from '../../pages/login'
-import Home from '../../pages/home/home'
+import Login from 'pages/login'
+import Home from 'pages/home'
 
 export const Routes =()=>{
     return (

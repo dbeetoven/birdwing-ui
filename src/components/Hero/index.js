@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import burger from '../../assets/images/burguer.png'
+import burger from '../../assets/images/header-bg.jpeg'
 const Wrapper = styled.section`
 width: 100%;
 `
