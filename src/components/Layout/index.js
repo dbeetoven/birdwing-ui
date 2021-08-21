@@ -1,21 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Container } from './LayoutStyles'
-import Theme from '../../styles/theme'
-import Navbar from '../Navbar/Navbar'
+import Theme from 'styles/theme'
+import NavBar from '../Navbar'
+import {Container} from './styles'
 
-// eslint-disable-next-line react/prop-types
-export const Layout = ({children}) => {
+const Layout = ({children}) => {
     return (
         <Theme>
             <Container>
-                <Navbar/>
+                <NavBar sticky={false}/>
                 <main>{children}</main>
             </Container>
         </Theme>
     )
 }
 
-Layout.prototype={
+Layout.propTypes = {
     children: PropTypes.element.isRequired
 }
+export default Layout

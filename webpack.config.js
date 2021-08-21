@@ -56,7 +56,7 @@ module.exports = (env, { mode }) => ({
     },
     resolve: {
         modules: [path.join(__dirname, './src'), 'node_modules'],
-        extensions: ['.js', '.jsx', '.json'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx','.json'],
         alias: {
             assets: path.resolve(__dirname, './src/assets/'),
             config: path.resolve(__dirname, './src/config/'),
