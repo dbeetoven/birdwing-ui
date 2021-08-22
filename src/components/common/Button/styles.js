@@ -3,13 +3,13 @@ import styled from 'styled-components'
 export const StyledButton = styled.button`
   align-items: center;
   appearance: none;
-  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  background-image: radial-gradient(100% 100% at 100% 0, #edb026 0, #5468ff 100%);
   border: 0;
   border-radius: 6px;
   box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
     rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
   box-sizing: border-box;
-  color: #fff;
+  color: var(--white);
   cursor: pointer;
   display: inline-flex;
   font-family: 'JetBrains Mono', monospace;

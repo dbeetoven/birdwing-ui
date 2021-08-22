@@ -1,2 +1,5 @@
-export * as Navbar from  './Navbar'
-export * as Products from  './Products'
+export {default as Navbar} from './Link'
+export {default as Hero} from './Hero'
+export {default as Layout} from './Layout'
+export {default as About} from './About'
+export {default as SectionDivider} from './SectionDivider'
