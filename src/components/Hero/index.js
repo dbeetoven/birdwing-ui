@@ -1,20 +1,28 @@
 import React from 'react'
-import styled from 'styled-components'
-import burger from '../../assets/images/header-bg.jpeg'
-const Wrapper = styled.section`
-width: 100%;
-`
-const Img = styled.img`
-object-fit: cover;
-object-position: 100% 0;
-`
+import { Button, Heading } from 'components/common'
+// import burger from '../../assets/images/header-bg.jpeg'
+import { StyledHero, StyledHeroContent, StyledHeroDescription } from './styles'
 
-const Hero = ()=>{
 
+const Hero = () => {
+    const getList =()=>console.log('cliked!!!')
     return (
-        <Wrapper>
-            <Img  src={burger} />
-        </Wrapper>
+        <StyledHero style={{  
+            backgroundImage: 'url(' + 'https://images.pexels.com/photos/34153/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350' + ')',
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat'
+        }}>
+            <StyledHeroContent>
+                <Heading center noMargin>Birdwing Boutique</Heading>
+                <StyledHeroDescription>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi, corrupti veniam.
+                </StyledHeroDescription>
+                <Button onclick={getList}>
+                    Our Catalogue
+                </Button>
+            </StyledHeroContent>
+        </StyledHero>
     )
 }
 
